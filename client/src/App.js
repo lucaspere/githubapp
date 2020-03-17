@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// COMPONENTES
+import GitHubForm from './components/GitHubForm.js'
 const app = (
-<h1>Oi</h1>
+   <div>
+      <GitHubForm />
+   </div>
 )
 
 ReactDOM.render(app, document.getElementById('root'))
