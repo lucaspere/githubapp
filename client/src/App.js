@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // COMPONENTES
-import GitHubForm from './components/GitHubForm.js'
+import GitHubDashboard from './components/GitHubDashboard.js'
+
 const app = (
    <div>
-      <GitHubForm />
+      <GitHubDashboard />
    </div>
 )
 
