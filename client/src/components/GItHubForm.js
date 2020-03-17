@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { items } from '../../../repositories.json';
+import React, { useState } from 'react';
+import { fetchRepos } from '../utils/api';
 
 
-const GitHubForm = (props) => {
+const GitHubForm = ({ setLoading, setRepos }) => {
 
    const [textInput, setTextInput] = useState('');
-
-   useEffect(() => {
-   }, [])
 
    const onSubmit = (e) => {
       e.preventDefault();
 
-      axios.get(`https://api.github.com/search/repositories?q=${textInput}`)
-         .then(({ data: { items } }) => props.setRepos(items)).catch(e => console.log(e))
+      fetchRepos(textInput, setLoading, setRepos)
 
    };
 
@@ -28,11 +23,15 @@ const GitHubForm = (props) => {
    return (
       <div>
          <form onSubmit={onSubmit}>
-            <input
-               type="text"
-               value={textInput}
-               onChange={onTextInputChange}
-            />
+            <div>
+               <label for="searchInput">Procure repositório</label>
+               <input
+                  id="searchInput"
+                  type="text"
+                  value={textInput}
+                  onChange={onTextInputChange}
+               />
+            </div>
             <button>procurar</button>
 
          </form>
