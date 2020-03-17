@@ -3,9 +3,9 @@
 const path = require('path')
 
 module.exports = {
-   entry: './src/App.js',
+   entry: './client/src/App.js',
    output: {
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'client/public'),
       filename: 'bundle.js'
    },
    mode: 'development',
@@ -14,18 +14,11 @@ module.exports = {
          loader: 'babel-loader',
          test: /\.jsx?$/,
          exclude: /node_modules/
-      }, {
-         test: /\.s?css$/,
-         use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
-         ]
       }]
    },
    devtool: 'cheap-module-aval-source-map',
    devServer: {
-      contentBase: path.join(__dirname, 'public'),
+      contentBase: path.join(__dirname, 'client/public'),
       historyApiFallback: true
    }
 }

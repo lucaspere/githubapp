@@ -5,6 +5,10 @@
   "repository": "https://github.com/lucaspere/githubapp.git",
   "author": "lucaspere <lucasrupestre@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "client": "webpack-dev-server"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
