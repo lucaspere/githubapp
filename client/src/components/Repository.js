@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-const Repository = ({ item, setRepos, repos}) => {
+const Repository = ({ item, setRepos, repos }) => {
 
    const [favoriteRepos, setFavoriteRepos] = useState([]);
    const [erro, setErro] = useState({ menssage: '', isError: false })
@@ -39,18 +39,23 @@ const Repository = ({ item, setRepos, repos}) => {
 
    return (
       <div>
+         {erro.isError && <p>{erro.menssage}</p>}
+         <img src={item.owner.avatar_url} width="50px"/>
          <div>
-            <h3>{item.full_name}</h3>
-            {erro.isError && <p>{erro.menssage}</p>}
-            <p>{item.description}</p>
-         </div>
-         <div>
-            <p>Stars: {item.stargazers_count}</p>
-            <p>Watchers: {item.watchers_count}</p>
-         </div>
-         <div>
-            <button onClick={() => addToFavorites(item.id)}>Favoritar</button>
-            <button onClick={() => onRemove(item.id)}>Deletar</button>
+            <div>
+               <h3>{item.full_name}</h3>
+               <p>{item.description}</p>
+               {item.license && <p>{item.license.name}</p>}
+               <p>{item.updated_at}</p>
+            </div>
+            <div>
+               <p>Stars: {item.stargazers_count}</p>
+               <p>Watchers: {item.watchers_count}</p>
+            </div>
+            <div>
+               <button onClick={() => addToFavorites(item.id)}>Favoritar</button>
+               <button onClick={() => onRemove(item.id)}>Deletar</button>
+            </div>
          </div>
       </div>
    );

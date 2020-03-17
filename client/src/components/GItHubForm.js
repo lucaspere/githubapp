@@ -24,7 +24,7 @@ const GitHubForm = ({ setLoading, setRepos }) => {
       <div>
          <form onSubmit={onSubmit}>
             <div>
-               <label for="searchInput">Procure repositório</label>
+               <label htmlFor="searchInput">Procure repositório</label>
                <input
                   id="searchInput"
                   type="text"
