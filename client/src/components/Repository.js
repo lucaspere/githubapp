@@ -1,46 +1,14 @@
 import React, { useState } from 'react';
+import { addToDB } from '../utils/api';
 
+const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
 
-
-const Repository = ({ item, setRepos, repos }) => {
-
-   const [favoriteRepos, setFavoriteRepos] = useState([]);
-   const [erro, setErro] = useState({ menssage: '', isError: false })
-
-   const addToFavorites = (id) => {
-
-      const alreadyAdded = favoriteRepos.some(item => item.id === id);
-
-      if (alreadyAdded) {
-         setErro({
-            menssage: 'Item já adicionado',
-            isError: true
-         });
-         return setTimeout(() => setErro({ menssage: '', isError: false }), 5000)
-      }
-
-      const favorite = repos.find(item => item.id === id)
-
-      setFavoriteRepos(
-         [...favoriteRepos,
-            favorite
-         ]
-      );
-   };
-
-   const onRemove = (id) => {
-
-      setRepos(
-         repos.filter((item) => item.id !== id)
-      );
-   };
-
-
+   const [message, setMessage] = useState('')
 
    return (
       <div>
-         {erro.isError && <p>{erro.menssage}</p>}
-         <img src={item.owner.avatar_url} width="50px"/>
+         {message && <p>{message}</p>}
+         <img src={item.owner.avatar_url} width="50px" />
          <div>
             <div>
                <h3>{item.full_name}</h3>
@@ -53,12 +21,29 @@ const Repository = ({ item, setRepos, repos }) => {
                <p>Watchers: {item.watchers_count}</p>
             </div>
             <div>
-               <button onClick={() => addToFavorites(item.id)}>Favoritar</button>
-               <button onClick={() => onRemove(item.id)}>Deletar</button>
+               <input
+                  type="button"
+                  value="Salvar"
+                  hidden={hiddenAddButton}
+                  onClick={() => {
+                     addToDB(item, setMessage)
+
+                     setTimeout(() => setMessage(''), 3000)
+                  }} />
+               <input
+                  type="button"
+                  value="Deletar"
+                  hidden={hiddenRemoveButton}
+                  onClick={() => onRemove(item.id)}
+               />
             </div>
          </div>
       </div>
    );
 };
+
+Repository.defaultProps = {
+
+}
 
 export default Repository;

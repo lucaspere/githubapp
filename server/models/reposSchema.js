@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const reposSchema = new mongoose.Schema({
+   id: {
+      type: Number,
+      unique: true,
+   },
    name: {
       type: String,
       required: true,
@@ -10,8 +14,8 @@ const reposSchema = new mongoose.Schema({
       type: String,
       required: true,
    },
-   avatar_url: {
-      type: String
+   owner: {
+      type: Object
    },
    html_url: {
       type: String

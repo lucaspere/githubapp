@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Repository from './Repository';
 
 
-const ReposList = ({ repos, setRepos }) => {
+const ReposList = ({ hiddenRemoveButton, hiddenAddButton, repos, setRepos }) => {
 
    if (!repos.length) {
 
@@ -11,7 +11,15 @@ const ReposList = ({ repos, setRepos }) => {
    }
    return (
       <div>
-         {repos.map(item => <Repository repos={repos} setRepos={setRepos} item={item} key={item.id} />)}
+         {repos.map(item => (
+            <Repository
+               key={item._id || item.id}
+               hiddenRemoveButton={hiddenRemoveButton}
+               hiddenAddButton={hiddenAddButton}
+               repos={repos} setRepos={setRepos}
+               item={item}
+            />
+         ))}
       </div>
    )
 }

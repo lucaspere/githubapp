@@ -26,10 +26,12 @@ const GitHubForm = ({ setLoading, setRepos }) => {
             <div>
                <label htmlFor="searchInput">Procure repositório</label>
                <input
+               placeholder="procurar repositório"
                   id="searchInput"
                   type="text"
                   value={textInput}
                   onChange={onTextInputChange}
+                  required
                />
             </div>
             <button>procurar</button>
