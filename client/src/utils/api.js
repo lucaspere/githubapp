@@ -55,3 +55,15 @@ export const addToDB = async (reposToAdd, setMessage) => {
       setMessage('Falha ao adicionar repositório');
    }
 }
+
+export const deleteRepos = async (id) => {
+
+   try {
+
+      await axios.delete('http://localhost:3000', {params: id})
+   
+   } catch(e) {
+      console.log(e)
+   }
+   
+}

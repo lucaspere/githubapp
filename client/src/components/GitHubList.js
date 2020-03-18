@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Repository from './Repository';
 
 
-const ReposList = ({ hiddenRemoveButton, hiddenAddButton, repos, setRepos }) => {
+const GitHubList = ({ hiddenRemoveButton, hiddenAddButton, repos, setRepos }) => {
 
    if (!repos.length) {
 
@@ -25,4 +25,4 @@ const ReposList = ({ hiddenRemoveButton, hiddenAddButton, repos, setRepos }) => 
 }
 
 
-export default ReposList;
+export default GitHubList;

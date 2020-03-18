@@ -16,7 +16,7 @@ const GitHubDashboard = () => {
 
       GetReposFromDB(setSavedRepos, setLoading);
 
-   }, [])
+   }, [savedRepos])
 
    return (
       <div>

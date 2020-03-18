@@ -31,4 +31,19 @@ router.post('/', async (req, res) => {
    }
 });
 
+router.delete('/', async (req, res) => {
+
+   const id = req.query[0]
+
+   try {
+
+      await Repos.findOneAndDelete({ id }, (err, response) => {
+         res.send(response)
+      });
+
+
+   } catch (e) {
+      res.status(404).send(e)
+   }
+})
 module.exports = router;

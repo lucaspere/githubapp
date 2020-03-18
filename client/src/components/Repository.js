@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addToDB } from '../utils/api';
+import { addToDB, deleteRepos } from '../utils/api';
 
 const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
 
@@ -34,7 +34,7 @@ const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
                   type="button"
                   value="Deletar"
                   hidden={hiddenRemoveButton}
-                  onClick={() => onRemove(item.id)}
+                  onClick={() => deleteRepos(item.id)}
                />
             </div>
          </div>
