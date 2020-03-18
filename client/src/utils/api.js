@@ -42,12 +42,15 @@ export const addToDB = async (reposToAdd, setMessage) => {
 
    try {
 
-      await axios.post('http://localhost:3000', reposToAdd);
+      const data = await axios.post('http://localhost:3000', reposToAdd);
+
+      if (data.status === 200) {
+         return setMessage(data.data.toString());
+      }
 
       setMessage('Repositório adicionado com sucesso!');
 
-   } catch(e) {
-      console.log(e);
+   } catch (e) {
 
       setMessage('Falha ao adicionar repositório');
    }

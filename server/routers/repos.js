@@ -13,6 +13,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
 
+   const alreadyRegistered = await Repos.findOne({ id: req.body.id })
+
+   if (alreadyRegistered) {
+      return res.send("Repositório já cadastrado")
+   }
+
    const repos = new Repos(req.body)
 
    try {
