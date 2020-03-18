@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { addToDB, deleteRepos } from '../utils/api';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+
+dayjs.extend(localizedFormat);
 
 const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
 
    const [message, setMessage] = useState('')
+
+   const updated = dayjs(item.updated_at).format('LL');
 
    return (
       <div>
@@ -13,12 +19,13 @@ const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
             <div>
                <h3>{item.full_name}</h3>
                <p>{item.description}</p>
-               {item.license && <p>{item.license.name}</p>}
-               <p>{item.updated_at}</p>
+
             </div>
             <div>
                <p>Stars: {item.stargazers_count}</p>
-               <p>Watchers: {item.watchers_count}</p>
+               <p>{item.language}</p>
+               {item.license && <p>{item.license.name}</p>}
+               <p>Updated on {updated}</p>
             </div>
             <div>
                <input
