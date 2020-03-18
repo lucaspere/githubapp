@@ -6,7 +6,7 @@ const Repos = require('../models/reposSchema');
 router.get('/', async (req, res) => {
 
    const repos = await Repos.find();
-   
+   console.log(repos)
    res.status(200).send(repos)
 
 });
