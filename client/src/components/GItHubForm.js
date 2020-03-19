@@ -3,7 +3,7 @@ import { fetchRepos } from '../utils/api';
 
 import './githubform.css';
 
-
+// ESSE COMPONENTE VAI RENDERIZAR O FORMULÁRIO PARA BUSCA
 const GitHubForm = ({ setLoading, setRepos }) => {
 
    const [textInput, setTextInput] = useState('');

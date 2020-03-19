@@ -4,7 +4,7 @@ import Repository from './Repository';
 
 import './githublist.css';
 
-
+// ESSE COMPONENTE VAI RENDERIZAR CADA REPOSITÓRIO
 const GitHubList = ({ hiddenRemoveButton, hiddenAddButton, repos, setRepos }) => {
 
    if (!repos.length) {

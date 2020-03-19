@@ -36,15 +36,4 @@ const reposSchema = new mongoose.Schema({
 
 const Repos = mongoose.model('Repos', reposSchema);
 
-reposSchema.methods.findReposById = async function(id){
-
-   const repos = await Repos.findOne({id})
-
-   if(!repos) {
-      throw new error("repositório não cadastrado")
-   }
-
-   return repos
-}
-
 module.exports = Repos

@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// VAI BUSCAR OS REPOSITÓRIOS NA API DO GITHUB
 export const fetchRepos = async (lookingFor, setLoading, setRepos) => {
 
    const abortController = new AbortController();
@@ -20,6 +21,7 @@ export const fetchRepos = async (lookingFor, setLoading, setRepos) => {
    }
 };
 
+// VAI PEGAR OS RESPOSITÓRIOS JÁ SALVOS NO DB
 export const GetReposFromDB = async (setRepos, setLoading) => {
 
    const abortController = new AbortController();
@@ -39,6 +41,7 @@ export const GetReposFromDB = async (setRepos, setLoading) => {
    }
 }
 
+// VAI ADICIONAR REPOSITÓRIO NO DB
 export const addToDB = async (reposToAdd, setMessage) => {
 
    try {
@@ -57,6 +60,7 @@ export const addToDB = async (reposToAdd, setMessage) => {
    }
 }
 
+// VAI DELETAR UM REPOSITÓRIO NO DB
 export const deleteRepos = async (id) => {
 
    try {

@@ -6,6 +6,8 @@ import GitHubList from './GitHubList';
 import { GetReposFromDB } from '../utils/api';
 
 import './githubdashboard.css';
+
+// ESSE COMPONENTE VAI RENDERIZAR O FORM E A LISTA DE REPOSITÓRIOS
 const GitHubDashboard = () => {
 
    const [repos, setRepos] = useState([]);

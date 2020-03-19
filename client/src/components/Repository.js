@@ -7,7 +7,7 @@ import './repository.css';
 
 dayjs.extend(localizedFormat);
 
-
+// ESSE COMPONENTE VAI RENDERIZAR CADA REPOSITÓRIO SINGULARMENTE
 const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
 
    const [message, setMessage] = useState('')
