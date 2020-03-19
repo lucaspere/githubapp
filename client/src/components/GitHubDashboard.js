@@ -5,7 +5,7 @@ import GitHubList from './GitHubList';
 
 import { GetReposFromDB } from '../utils/api';
 
-
+import './githubdashboard.css';
 const GitHubDashboard = () => {
 
    const [repos, setRepos] = useState([]);
@@ -22,7 +22,9 @@ const GitHubDashboard = () => {
       <div>
          <GitHubForm setLoading={setLoading} setRepos={setRepos} />
          {loading ? (
-            <div>buscando</div>
+            <div className='lds-container'>
+               <div class="lds-facebook"><div></div><div></div><div></div></div>
+            </div>
          ) : !repos.length ?
                <GitHubList setRepos={setSavedRepos} repos={savedRepos} hiddenAddButton={true} />
                :

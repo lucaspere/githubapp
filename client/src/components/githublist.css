@@ -1,0 +1,12 @@
+.githublist-container {
+   display: block;
+   padding: 0 10px;
+   margin: auto;
+   max-width: 600px;
+}
+
+.githublist-message {
+   text-align: center;
+   font-size: 25px;
+   font-weight: 600;
+}

@@ -5,7 +5,7 @@ const reposSchema = new mongoose.Schema({
       type: Number,
       unique: true,
    },
-   name: {
+   full_name: {
       type: String,
       required: true,
       trim: true,

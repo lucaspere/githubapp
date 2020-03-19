@@ -27,10 +27,11 @@ export const GetReposFromDB = async (setRepos, setLoading) => {
 
    try {
 
+      
       const data = await axios.get('http://localhost:3000', { signal });
 
       setRepos(data.data);
-      setLoading(false);
+
 
       abortController.abort();
    } catch (e) {
