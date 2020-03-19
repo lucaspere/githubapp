@@ -17,7 +17,9 @@ const Repository = ({ item, hiddenRemoveButton, hiddenAddButton }) => {
    return (
       <div className='repository-container'>
          {message && <p>{message}</p>}
-         <img src={item.owner.avatar_url} className='repos-image' />
+         <a href={item.html_url} target='_blank' style={{textDecoration: 'none'}}>
+            <img src={item.owner.avatar_url} className='repos-image' />
+         </a>
          <div className='repos-information-container'>
             <div className='repos-descriptions'>
                <div className='descriptions-container'>
