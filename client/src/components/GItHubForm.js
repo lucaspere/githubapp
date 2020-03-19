@@ -11,8 +11,8 @@ const GitHubForm = ({ setLoading, setRepos }) => {
    const onSubmit = (e) => {
       e.preventDefault();
 
-      fetchRepos(textInput, setLoading, setRepos)
-
+      fetchRepos(textInput, setLoading, setRepos);
+      setTextInput('');
    };
 
    const onTextInputChange = (e) => {
