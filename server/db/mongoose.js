@@ -1,4 +1,4 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/github-repos-api',
+mongoose.connect('mongodb+srv://githubapp:mydatabaseforlett@cluster0-m1iem.mongodb.net/github-repos-app?retryWrites=true&w=majority',
    { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
