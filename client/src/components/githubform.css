@@ -1,0 +1,51 @@
+.githubform-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #242424;
+   height: 60px;
+   border-radius: 5px;
+   margin-bottom: 20px;
+}
+
+#form {
+   display: flex;
+}
+
+.searchContainer {
+   width: 30em;
+   height: 30px;
+   align-items: center;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.searchContainer::placeholder {
+   color: #242424;
+   font-weight: 700;
+}
+.enjoy-css {
+   display: inline-block;
+   width: 300px;
+   padding: 10px 20px;
+   border: 1px solid #b7b7b7;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+   color: #242424;
+   -o-text-overflow: clip;
+   text-overflow: clip;
+   background: rgba(252,252,252,1);
+
+ }
+
+.button {
+   display: inline-block;
+   height: 35px;
+   width: 90px;
+   font-size: 15px;
+   font-weight: bold;
+   border: 2px solid #35a80f;
+   border-radius: 5px;
+   color: #2c860e;
+   cursor: pointer;
+};

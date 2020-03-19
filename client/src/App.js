@@ -4,8 +4,11 @@ import ReactDOM from 'react-dom';
 // COMPONENTES
 import GitHubDashboard from './components/GitHubDashboard.js'
 
+// STYLE
+import './app.css'
+
 const app = (
-   <div>
+   <div className='container'>
       <GitHubDashboard />
    </div>
 )

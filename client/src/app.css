@@ -1,0 +1,11 @@
+
+
+.container {
+   font-family: 'Roboto', 'sans-serif';
+   box-sizing: content-box;
+   display: block;
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 10px;
+
+}

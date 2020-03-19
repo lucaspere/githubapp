@@ -14,7 +14,14 @@ module.exports = {
          loader: 'babel-loader',
          test: /\.jsx?$/,
          exclude: /node_modules/
-      }]
+      }, {
+         test: /\.css$/,
+         use: [
+            'style-loader',
+            'css-loader'
+         ]
+      }
+   ]
    },
    devtool: 'cheap-module-aval-source-map',
    devServer: {
